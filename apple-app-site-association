@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID": "F4QFESWCYY.com.ryt.cib",
-                "paths": ["/home"]
+                "paths": ["*"]
             }
         ]
     }
