@@ -7,12 +7,21 @@
       window.location = 'cibmb://shopinfo?id=1859284';
       setTimeout(function() {
         window.location = 'itms-apps://itunes.apple.com/cn/app/xing-ye-yin-xing-shou-ji-yin/id433592972'
-    }, 2000);
-}
-</script>
+      }, 2000);
+    }
+    </script>
 </head>
 <body>
-<a href="javascript:openOrDownload();">Scheme link</a>
-<a href="https://ts1ng.github.io/dispatch?uri=/movie/25815034&amp;from=mdouban&amp;page=movie&amp;model=B&amp;copy=1&amp;channel=card_movie&amp;download=1">打开</a>
+  <button id="btn1">测试addEventListener</button>
+  <a href="javascript:openOrDownload();">Scheme link</a>
+  <script>
+  var btn1 = document.getElementById("btn1");
+  btn1.addEventListener("click", function(){
+    open_app.src = 'https://www.domain.com/site/download?force=1';
+    setTimeout(function() {
+        location.href = 'itms-apps://itunes.apple.com/cn/app/xing-ye-yin-xing-shou-ji-yin/id433592972';
+    }, 1000);
+  });
+  </script>
 </body>
 </html>
