@@ -8,3 +8,11 @@
 > - Universal Links will not work with a user driven ```<a href="...">``` element click on the same domain. Example: if there is a Universal Link on google.com pointing to a different Universal Link on google.com, it will not open the app.
 > - Universal Links cannot be triggered via Javascript (in window.onload or via a .click() call on an ```<a>``` element), unless it is part of a user action.
 > - 总的说来，就是自从9.3.X改版之后，通用链接不支持域内跳转了，跳转前后的两个domain必须是不同的，否则只会safari打开。
+
+**待讨论的问题**
+> -服务端是否支持https。
+> -apple-app-site-association是否需要经过签名，签名之后这个文件无法明文显示安全点。
+> -iOS9以下版本如何处理，是否需要Safari打开做处理。
+> -腾讯的“微下载”服务是否需要申请
+> -假设系统本地未安装兴业App的情况下，改怎么跳转？（建议跳转到微下载进行App下载，也可以通过safari来下载）
+> -如何联调内网还是外网来联调?
