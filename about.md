@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+本人为iOS工程师，12年底进入行业做iOS游戏开发，后辗转金融服务相关的iOS App开发至今。主页是iOS开发，但因公司需要中间也做过C++、lua、erlang等语言的开发工作。
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+本人正寻觅合适的iOS开发工作，前段技术开发也非常感兴趣，如果有志同道合的朋友可以发我一下邮箱，本广告长期有效。
 
-### Contact me
+### 联系方式
 
-[email@domain.com](mailto:email@domain.com)
+[ever.tsing@gmail.com](mailto:ever.tsing@gmail.com)
