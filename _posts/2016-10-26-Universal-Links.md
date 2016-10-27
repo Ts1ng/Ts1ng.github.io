@@ -5,7 +5,11 @@ title: 微信启动App之Universal Links开发
 
 接到任务说要微信启动App看了下苹果的文档和好些人的博客感觉难度不是很大，便开搞了原来想在本机上开个Apache，配置本机的IP应该就可以差不多了。写了一个最简单的html页面，里面就放了一个超链接跳转到App的链接。没想到栽跟头了，怎么试都没跳转，找了好些文档google下说配置IP不行，于是才想起来在github.io上开搞。中间又碰到同一域名下配置的Universal Links也无法正常跳转，无奈搞了两个github.io域名才成功跳转，简单点就是当前页面的域名和即将跳转的域名不能相同。比如无法在a.github.com页面下配置的a.github.com/dispatch链接就无法跳转，得是b.github.io/dispatch才能完成跳转。其它的问题就没碰到了都是挺顺利的。
 
-**NOTE**:
+放一个网上找的Universal Links的结构图：
+
+![_config.yml]({{ site.baseurl }}/images/universal-links.png)
+
+**注意事项**:
 
  - apple-app-site-association文件不能带json后缀。
  - apple-app-site-association要传到域名根目录下或者根域名下面新建的.well-known文件下。
