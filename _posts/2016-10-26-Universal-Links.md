@@ -65,3 +65,11 @@ title: 微信启动App之Universal Links开发
  - 如何联调内网还是外网来联调?
  - 由于universal links不支持在同一域名内打开App，页面端这方面如何处理？
  - 打开App所使用的路径问题，是统一使用一个路径加参数的方式，还是用多个路径来实现不同业务跳转？
+
+ **apple-app-site-association签名方法**
+apple-app-site-association可以利用打包App的证书进行签名，在keychain里导出证书成.p12格式，具体签名步骤如下:
+```
+openssl pkcs12 -in Certificates.p12 -clcerts -nokeys -out output_crt.pem
+openssl pkcs12 -in Certificates.p12 -nocerts -nodes -out output_key.pem
+cat apple-app-site-association.json | openssl smime -sign -inkey output_key.pem -signer output_crt.pem -noattr -nodetach -outform DER> apple-app-site-association
+```
