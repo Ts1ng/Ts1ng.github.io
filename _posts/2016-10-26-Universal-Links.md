@@ -80,6 +80,7 @@ title: 微信启动App之Universal Links开发
 
  **apple-app-site-association签名方法**
 apple-app-site-association可以利用打包App的证书进行签名，在keychain里导出证书成.p12格式，具体签名步骤如下:
+
 ```
 openssl pkcs12 -in Certificates.p12 -clcerts -nokeys -out output_crt.pem
 openssl pkcs12 -in Certificates.p12 -nocerts -nodes -out output_key.pem
