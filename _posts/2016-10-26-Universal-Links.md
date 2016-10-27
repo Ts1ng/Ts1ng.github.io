@@ -4,6 +4,7 @@ title: 微信启动App之Universal Links开发
 ---
 
 **NOTE**:
+
  - apple-app-site-association文件不能带json后缀。
  - apple-app-site-association要传到域名根目录下或者根域名下面新建的.well-known文件下。
  - Xcode工程文件Associated Domains里配置applinks:不能使用IP地址，只支持域名，域名最好用https的（如果是https域名，域名证书一定是有效被信任的证书），如果用http那么apple-app-site-association文件必须经过签名。> - 网络顺畅的情况下，应用会在在刚安装（不是打开）的时候会去applink中的地址下载apple-app-site-association文件。
@@ -14,6 +15,7 @@ title: 微信启动App之Universal Links开发
  - 总的说来，就是自从9.3.X改版之后，通用链接不支持域内跳转了，跳转前后的两个domain必须是不同的，否则只会safari打开。
 
 **待讨论的问题**:
+
  - 服务端是否支持https。
  - apple-app-site-association是否需要经过签名，签名之后这个文件无法明文显示安全点。
  - iOS9以下版本如何处理，是否需要Safari打开做处理。
