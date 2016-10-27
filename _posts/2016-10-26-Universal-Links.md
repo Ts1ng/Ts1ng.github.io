@@ -79,6 +79,7 @@ title: 微信启动App之Universal Links开发
  - 打开App所使用的路径问题，是统一使用一个路径加参数的方式，还是用多个路径来实现不同业务跳转？
 
  **apple-app-site-association签名方法**
+ 
 apple-app-site-association可以利用打包App的证书进行签名，在keychain里导出证书成.p12格式，具体签名步骤如下:
 
 ```
