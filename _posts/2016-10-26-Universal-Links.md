@@ -14,7 +14,7 @@ title: 微信启动App之Universal Links开发
 > - Universal Links cannot be triggered via Javascript (in window.onload or via a .click() call on an ```<a>``` element), unless it is part of a user action.
 > - 总的说来，就是自从9.3.X改版之后，通用链接不支持域内跳转了，跳转前后的两个domain必须是不同的，否则只会safari打开。
 
-**需要讨论的问题**
+**需要讨论的问题**:
 > - 服务端是否支持https。
 > - apple-app-site-association是否需要经过签名，签名之后这个文件无法明文显示安全点。
 > - iOS9以下版本如何处理，是否需要Safari打开做处理。
