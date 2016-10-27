@@ -9,6 +9,41 @@ title: 微信启动App之Universal Links开发
 
 ![_config.yml]({{ site.baseurl }}/images/universal-links.png)
 
+
+**App端考虑的情况分两种就是跳转的时候App已打开和App未启动的情况**:
+1. App已打开(就是App还驻留在后台)需要配置以下delegate即可：
+```
+#pragma mark -
+#pragma mark universal links
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler {
+    if ((userActivity && [userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb] && userActivity.webpageURL)) {
+        ................
+        return YES;
+    }
+
+    return NO;
+}
+```
+2. App未打开时App启动后首先相应的还是```- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler```这个方法但是如果此时```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions```可能还未返回所以可已在这个函数里面取得NSUserActivity对象进行处理
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  ................
+  //universal links跳转到App启动时作处理
+  NSDictionary *userActivityDictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsUserActivityDictionaryKey];
+  NSUserActivity *activity = nil;
+  NSString *activityType = nil;
+  if (userActivityDictionary) {
+      activity = userActivityDictionary[@"UIApplicationLaunchOptionsUserActivityKey"];
+      activityType = userActivityDictionary[UIApplicationLaunchOptionsUserActivityTypeKey];
+  }
+  if (activity && [activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+      //处理NSUserActivity代码
+      .............
+  }
+  return YES;
+}
+```
+
 **注意事项**:
 
  - apple-app-site-association文件不能带json后缀。
